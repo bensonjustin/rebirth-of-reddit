@@ -1,0 +1,112 @@
+html {
+  background-image: url(/assets/bg.jpg);
+  background-size: cover;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+#h1Wrapper {
+  background: url(/assets/header_bg.svg) no-repeat center;
+  height: 10vh;
+  margin: 0;
+  background-color: white;
+}
+#fastenate {
+  background: url(/assets/logo.svg) no-repeat center;
+  height: 10vh;
+  margin: 0;
+}
+#plusWrapper {
+  width: 100%;
+}
+#plusIcon {
+  position: absolute;
+  display: flex;
+  align-content: flex-end;
+}
+#pages {
+  background-color: rgb(68, 68, 68);
+  color: grey;
+  font-family: "Oswald", sans-serif;
+  height: 6vh;
+  margin: 0;
+  text-align: center;
+}
+#pages a {
+  color: grey;
+  text-decoration: none;
+}
+#pages a:hover {
+  color: rgb(200, 80, 0);
+}
+.postsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  justify-content: center;
+  margin: auto;
+}
+.postWrapper {
+  height: 300px;
+  width: 250px;
+  padding: 20px;
+  margin: 20px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgb(41, 16, 0);
+}
+.postImage {
+  height: 150px;
+  width: 250px;
+}
+.postTitle {
+  font-family: "Oswald", sans-serif;
+  margin-top: 10px;
+  height: 2em;
+  line-height: 1em;
+  overflow: hidden;
+}
+.infoWrapper {
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  color: rgb(100, 100, 100);
+  display: inline-block;
+  margin-top: 5px;
+  height: 2em;
+  line-height: 1em;
+  overflow: hidden;
+}
+.postText {
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  height: 4em;
+  line-height: 1em;
+  overflow: hidden;
+  margin-top: 10px;
+}
+#fbInsta {
+  position: fixed;
+  bottom: 0;
+  background-color: rgb(68, 68, 68);
+  height: 6vh;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+#social {
+  display: flex;
+}
+#fb {
+  display: flex;
+  justify-content: flex-end;
+  background: url(/assets/facebook_grey.svg) no-repeat;
+  height: 6vh;
+  width: 100%;
+}
+#insta {
+  display: flex;
+  justify-content: flex-start;
+  background: url(/assets/instagram_grey.svg) no-repeat;
+  height: 6vh;
+  width: 100%;
+}
