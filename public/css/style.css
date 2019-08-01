@@ -23,7 +23,16 @@ body {
 #plusIcon {
   position: absolute;
   display: flex;
-  align-content: flex-end; }
+  align-content: flex-end;
+  width: 25px;
+  height: 25px;
+  font-weight: bold;
+  font-size: 30px;
+  color: #c85000;
+  border-style: solid;
+  border-color: #ffa600;
+  padding-bottom: 8px;
+  padding-left: 8px; }
 
 #pages {
   background-color: #444444;
@@ -33,11 +42,12 @@ body {
   margin: 0;
   text-align: center; }
 
-#pages a {
+#pages span {
   color: grey;
   text-decoration: none; }
 
-#pages a:hover {
+#pages .navBar:hover {
+  cursor: pointer;
   color: #c85000; }
 
 .postsWrapper {

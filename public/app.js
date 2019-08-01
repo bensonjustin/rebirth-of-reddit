@@ -35,6 +35,10 @@ function reqListener() {
       let obDataPic = obData.preview.images[0].source.url;
       postImage.src = obDataPic.replace(/amp;/g, "");
       imageWrapper.appendChild(postImage);
+    } else if (obD[i].data.url.match(/\.(jpeg|jpg|gif|png)$/) != null) {
+      let obDataPic = obData.url;
+      postImage.src = obDataPic.replace(/amp;/g, "");
+      imageWrapper.appendChild(postImage);
     } else {
       postImage.src = "http://placekitten.com/150/250";
       imageWrapper.appendChild(postImage);
@@ -49,16 +53,55 @@ function reqListener() {
     postWrapper.appendChild(postText);
   }
 }
-oReq.addEventListener("load", reqListener);
-oReq.open("GET", "https://www.reddit.com/r/tractors.json");
-oReq.send();
-const oReqWind = new XMLHttpRequest();
-function reqListenerWind() {
-  reqListener();
+
+function getData(url) {
+  oReq.addEventListener("load", reqListener);
+  oReq.open("GET", url);
+  oReq.send();
 }
-let windmills = document.querySelectorAll(".windmills")[0];
-console.log(reqListenerWind());
-// windmills.addEventListener("click", reqListenerWind);
-// oReqWind.addEventListener("load", reqListenerWind);
-// oReqWind.open("GET", "https://www.reddit.com/r/windmills.json");
-// oReqWind.send();
+getData("https://www.reddit.com/r/tractors.json");
+
+randomArr = [
+  "https://www.reddit.com/r/ArcherFX.json",
+  "https://www.reddit.com/r/kmart.json",
+  "https://www.reddit.com/r/sewing.json",
+  "https://www.reddit.com/r/larp.json",
+  "https://www.reddit.com/r/manicure.json",
+  "https://www.reddit.com/r/thumbtacks.json",
+  "https://www.reddit.com/r/bald.json"
+];
+
+let randomRed = document.querySelectorAll(".navBar")[0];
+randomRed.addEventListener("click", () => {
+  document.querySelectorAll(".postsWrapper")[0].innerHTML = "";
+  getData(randomArr[Math.floor(Math.random() * randomArr.length)]);
+});
+
+let beans = document.querySelectorAll(".navBar")[1];
+beans.addEventListener("click", () => {
+  document.querySelectorAll(".postsWrapper")[0].innerHTML = "";
+  getData("https://www.reddit.com/r/beans.json");
+});
+
+let marbles = document.querySelectorAll(".navBar")[2];
+marbles.addEventListener("click", () => {
+  document.querySelectorAll(".postsWrapper")[0].innerHTML = "";
+  getData("https://www.reddit.com/r/marbles.json");
+});
+
+let bookshelves = document.querySelectorAll(".navBar")[3];
+bookshelves.addEventListener("click", () => {
+  document.querySelectorAll(".postsWrapper")[0].innerHTML = "";
+  getData("https://www.reddit.com/r/bookshelves.json");
+});
+
+// function navBar() {
+//     let obD = JSON.parse(this.responseText).data.children
+//     forEach()
+//     let topicX = document.querySelectorAll(`".${topic}"`)[0];
+//   topicX.addEventListener("click", () => {
+//     document.querySelectorAll(".postsWrapper")[0].innerHTML = "";
+//     getData(url);
+//   });
+// }
+// navBar(windmills, "https://www.reddit.com/r/windmills.json");
